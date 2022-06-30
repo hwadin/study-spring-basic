@@ -1,5 +1,9 @@
 package hello.core.member;
 
+import hello.core.AppConfig;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import java.util.HashMap;
 import java.util.Map;
 
