@@ -1,5 +1,6 @@
 package hello.core;
 
+import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
@@ -20,20 +21,20 @@ import org.springframework.context.annotation.FilterType;
         ,classes = Configuration.class
         )
 )
-
 public class AutoAppConfig {
 
         @Autowired
         MemberRepository memberRepository;
         @Autowired
+        @MainDiscountPolicy
         DiscountPolicy discountPolicy;
 
-//        @Bean
+        @Bean
         OrderService orderService(){
                 return new OrderServiceImpl(memberRepository, discountPolicy);
         }
 
-//        @Bean
+        @Bean
         MemberRepository memberRepository(){
                 return new MemoryMemberRepository();
         }

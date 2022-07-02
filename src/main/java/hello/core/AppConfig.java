@@ -17,7 +17,7 @@ public class AppConfig {
         System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
-    @Bean
+    //@Bean
     public OrderService orderService() {
         //1번
         System.out.println("call AppConfig.orderService");
@@ -25,7 +25,7 @@ public class AppConfig {
                 memberRepository(),
                 discountPolicy());
     }
-    @Bean
+    //@Bean
     public MemberRepository memberRepository() {
         //2번? 3번?
         System.out.println("call AppConfig.memberRepository");
